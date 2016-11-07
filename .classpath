@@ -43,5 +43,15 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/wsdl4j.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mongo-java-driver-3.3.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-digester-1.8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/gson-2.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/gson-2.1-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/gson-2.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-core-1.11.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-json-1.11.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-server-1.11.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-servlet-1.11.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jsr311-api-1.1.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-data-mongodb-1.9.4.RELEASE.jar"/>
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>
