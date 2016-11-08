@@ -2,11 +2,17 @@ package com.packfly.resources;
 
 import java.util.ArrayList;
 
-import javax.websocket.server.PathParam;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
+import com.google.gson.Gson;
 import com.packfly.controller.UserController;
 import com.packfly.model.User;
 
@@ -22,13 +28,31 @@ public class UserResource {
 		return uc.getUsers();
 	}
 	
-	/*
+	
 	@GET
 	@Path("/findone/{username}")
 	@Produces("application/json")
-	public User getOne(@PathParam("username") String username){
+	public Response getOne(@PathParam("username") String username){
 		UserController uc = new UserController();
-		return uc.getUser(username);
+		User u = new User();
+		u = uc.getUser(username);
+		return Response.status(200).entity(u).build();
+		
 	}
-	*/
+	
+	
+	@POST
+	@Path("/post")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response postOne(String data){
+		String result = data;
+		System.out.println(result);
+		Gson gson = new Gson();
+		User newuser = gson.fromJson(data, User.class);	
+		
+		System.out.println(newuser.getUsername() + newuser.getPassword());
+		
+		return Response.status(200).entity(newuser).build();
+	}
 }

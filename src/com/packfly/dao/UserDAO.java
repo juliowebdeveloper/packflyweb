@@ -41,18 +41,17 @@ public class UserDAO {
 	}
 	
 	public  User findUser(String username){
-		ArrayList<User> users = new ArrayList<User>();
 		
+		FindIterable<Document> foundUsers =  userCollection.find (new Document("username",username)).limit(1);
 		
-		Document doc = (Document) userCollection.find(new Document("username",username)).limit(1);
-		
+		User u = new User();
+		for (Document doc : foundUsers) {
 			Gson gson = new Gson();
-			User u = gson.fromJson(doc.toJson(), User.class);
+			u = gson.fromJson(doc.toJson(), User.class);
 			System.out.println(u.getUsername());
-			users.add(u);
-		
 	
-		
+		}
+
 		return u;
 	}
 	
